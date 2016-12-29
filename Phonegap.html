@@ -1,0 +1,749 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>reveal.js - The HTML Presentation Framework</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../lib/css/Newzenburn.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+        if (window.location.search.match(/print-pdf/gi)) {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = 'css/print/pdf.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+    </script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://app.userapp.io/js/userapp.client.js"></script>
+    <script language="JavaScript">
+        //////////F12 disable code////////////////////////
+        document.onkeypress = function (event) {
+            event = (event || window.event);
+            if (event.keyCode == 123) {
+                //alert('No F-12');
+                return false;
+            }
+        }
+        document.onmousedown = function (event) {
+            event = (event || window.event);
+            if (event.keyCode == 123) {
+                //alert('No F-keys');
+                return false;
+            }
+        }
+        document.onkeydown = function (event) {
+            event = (event || window.event);
+            if (event.keyCode == 123) {
+                //alert('No F-keys');
+                return false;
+            }
+        }
+        /////////////////////end///////////////////////
+
+
+        //Disable right click script 
+        //visit http://www.rainbow.arch.scriptmania.com/scripts/ 
+        var message = "Sorry, right-click has been disabled";
+        /////////////////////////////////// 
+        function clickIE() { if (document.all) { (message); return false; } }
+        function clickNS(e) {
+            if
+(document.layers || (document.getElementById && !document.all)) {
+                if (e.which == 2 || e.which == 3) { (message); return false; }
+            }
+        }
+        if (document.layers)
+        { document.captureEvents(Event.MOUSEDOWN); document.onmousedown = clickNS; }
+        else { document.onmouseup = clickNS; document.oncontextmenu = clickIE; }
+        document.oncontextmenu = new Function("return false")
+        // 
+        function disableCtrlKeyCombination(e) {
+            //list all CTRL + key combinations you want to disable
+            var forbiddenKeys = new Array('a', 'n', 'c', 'x', 'v', 'j', 'w','s');
+            var key;
+            var isCtrl;
+            if (window.event) {
+                key = window.event.keyCode;     //IE
+                if (window.event.ctrlKey)
+                    isCtrl = true;
+                else
+                    isCtrl = false;
+            }
+            else {
+                key = e.which;     //firefox
+                if (e.ctrlKey)
+                    isCtrl = true;
+                else
+                    isCtrl = false;
+            }
+            //if ctrl is pressed check if other key is in forbidenKeys array
+            if (isCtrl) {
+                for (i = 0; i < forbiddenKeys.length; i++) {
+                    //case-insensitive comparation
+                    if (forbiddenKeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase()) {
+                        alert('Key combination CTRL + ' + String.fromCharCode(key) + ' has been disabled.');
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+    </script>
+
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .divkali {
+            display: block;
+            padding: 0.5em;
+            background: #3F3F3F;
+            color: #DCDCDC;
+            overflow: auto;
+            max-height: 400px;
+            word-wrap: normal;
+            text-align: left;
+            font-size: .55em !important;
+            font-family: monospace !important;
+            line-height: 1.2em !important;
+        }
+
+        .literal {
+            color: #EFEFAF;
+        }
+
+        .built_in {
+            color: #CC9393;
+        }
+
+        .comment {
+            color: #7F9F7F;
+        }
+
+        .title {
+            color: #efef8f;
+        }
+
+        .number {
+            color: #8CD0D3;
+        }
+
+        .keyword {
+            color: #E3CEAB;
+        }
+    </style>
+</head>
+
+<body style="transition: -webkit-transform 0.8s ease; -webkit-transition: -webkit-transform 0.8s ease;" onkeypress="return disableCtrlKeyCombination(event);" onkeydown="return disableCtrlKeyCombination(event);">
+
+    <div class="reveal" data-transition-speed="default" data-background-transition="default">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section class="past" style="top: -310px; display: block;" hidden="">
+                <h1>Cordova/Phonegap</h1>
+                <p class="fragment" style="text-align: right;" data-fragment-index="0">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    kaliprasada rao banala <!-- -->
+                </p>
+                <p class="fragment" style="text-align: right;" data-fragment-index="1">
+                    email : <!-- -->
+                    <a href="mailto:prasadrao.banala@gmail.com" class="fragment" data-fragment-index="1">prasadrao dot banal at gmail.com</a> <!-- -->
+                </p>
+                <p class="fragment" style="text-align: right;" data-fragment-index="2">
+                    twitter : <!-- -->
+                    <a href="https://twitter.com/prasadrao08" class="fragment" data-fragment-index="2">@prasadrao08</a> <!-- -->
+                </p>
+                <p class="fragment" style="text-align: right;" data-fragment-index="3">
+                    github : <!-- -->
+                    <a href="https://github.com/prasad4u" class="fragment" data-fragment-index="3">prasad4ru</a> <!-- -->
+                </p>
+            </section><section class="past" style="top: -115px; display: block;" hidden="">
+                <h3>Official Site</h3>
+                <ul>
+                    <li><a href="http://www.phonegap.com"></a><a href="http://www.phonegap.com">http://www.phonegap.com</a> - The main site.</li>
+                </ul>
+            </section><section class="stack past" style="top: 0px; display: block;" data-previous-indexv="0" hidden="">
+                <section style="top: -120px; display: block;" class="">
+                    <h3>WHAT IS PHONEGAP</h3>
+                    <p>Allows  you to build applications for mobile devices using JavaScript, HTML5, and CSS3, instead of device-specific languages such as Objective-C or Java.</p>
+                </section><section class="future" style="top: -255px; display: block;" hidden="">
+                    <h3>HYBRID APPLICATIONS</h3>
+                    <ul>
+                        <li>PhoneGap creates what is now called hybrid applications</li>
+                        <li>They are not web applications, as they can use device functionalities such as Camera, File Systems etc. They are also packaged/bundled and can be made available on application stores.</li>
+                        <li>They are not native applications per se as they use HTML and CSS to render their layouts as opposed to using native UI frameworks, e.g. Cocoa.</li>
+                        <li>Application logic is written with Javascript as opposed to a primary language of choice for the target platform, that would be Objective-C for iOS or Java for Android.</li>
+                    </ul>
+                </section><section class="future" style="top: -75px; display: block;" hidden="">
+                    <h3>So how does it look like ?</h3>
+                </section><section class="future" style="top: -100px; display: block;" hidden="">
+                    <h3>AN ANDROID APP</h3>
+                    <p>HTML + CSS + Javascript ----&gt; MyApp.apk  </p>
+                </section><section class="future" style="top: -101px; display: none;" hidden="">
+                    <h3>AN IOS APP</h3>
+                    <p>HTML + CSS + Javascript ----&gt; MyApp.ipa</p>
+                </section><section class="future" style="top: -138px; display: none;" hidden="">
+                    <h3>DESIGN PHILOSOPHY</h3>
+                    <ul>
+                        <li>Use native WebView and embed HTML5 code inside it</li>
+                        <li>Use Language bindings a.k.a. Foreign function interface to gain access to various native functionalities. <a href="http://docs.phonegap.com/en/3.0.0/guide_hybrid_plugins_index.md.html#Plugin%20Development%20Guide">More here</a>.</li>
+                    </ul>
+                </section>
+            </section><section class="past" style="top: -181px; display: none;" hidden="">
+                <h3>Some featured applications</h3>
+                <ul>
+                    <li>See <a href="http://phonegap.com/app/feature/"></a><a href="http://phonegap.com/app/feature/">http://phonegap.com/app/feature/</a></li>
+                    <li>
+                        Some direct links<ul>
+                            <li><a href="http://phonegap.com/app/rormix/">Rormix</a></li>
+                            <li><a href="http://phonegap.com/app/math-iq/">MathIQ</a></li>
+                            <li><a href="http://phonegap.com/app/bbc-olympics/">BBC Olympics</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section><section class="past" style="top: -181px; display: none;" hidden="">
+                <h3>Case studies</h3>
+                <ul>
+                    <li>See <a href="http://phonegap.com/case/"></a><a href="http://phonegap.com/case/">http://phonegap.com/case/</a></li>
+                    <li>Case study may help you show the necessary precedence already taken - to convince the higher ups and other project stack holders to understand applicability and acceptance of Phonegap as a technology.</li>
+                </ul>
+            </section><section class="past" style="top: -265.5px; display: none;" hidden="">
+                <h3>A BIT OF HISTORY</h3>
+                <ul>
+                    <li>Born at Nitobi Software in the summer of 2008</li>
+                    <li>Acquired by Adobe in October, 2011 (announcement)</li>
+                    <li>Apache Cordova (<a href="http://cordova.apache.org">http://cordova.apache.org</a>)</li>
+                    <li>PhoneGap code was contributed to Apache Foundation which became Apache Cordova Project</li>
+                    <li>Target Platform Support (official link)</li>
+                    <li>amazon-fireos, android, blackberry10, ios, wp7, wp8, win8, tizen</li>
+                    <li>New platforms are added and obsolete platforms removed</li>
+                </ul>
+            </section><section class="stack past" style="top: 0px; display: none;" data-previous-indexv="0" hidden="">
+                <section style="top: -222.5px; display: none;" class="">
+                    <h3>BENEFITS</h3>
+                    <ul>
+                        <li>Target multiple platforms</li>
+                        <li>Re-use your existing web dev skills</li>
+                        <li>No learning curve involved</li>
+                        <li>Rapid prototyping</li>
+                        <li>No need to hire a different skillset</li>
+                        <li>Ideal for a web shops</li>
+                        <li>Apps are powered by open web standards</li>
+                    </ul>
+                </section><section class="future" style="top: -181px; display: none;" hidden="">
+                    <h3>BENEFITS : BUILD SERVICE</h3>
+                    <ul>
+                        <li>No need to buy h/w and s/w required.</li>
+                        <li>No need to maintain SDKs</li>
+                        <li>Better development workflow</li>
+                        <li>Integration with git</li>
+                        <li>Team management</li>
+                    </ul>
+                </section>
+            </section>
+            <section class="stack past" style="top: 0px; display: none;" data-previous-indexv="0" hidden="">
+                <section style="top: -191px; display: none;" class="">
+                    <h3>INSTALLATION : DEPENDENCIES</h3>
+                    <ul>
+                        <li>First, Install Node.js (<a href="http://nodejs.org/download/"></a><a href="http://nodejs.org/download/">http://nodejs.org/download/</a>)</li>
+                        <li>It is available for Mac, Linux and Windows</li>
+                        <li>
+                            Go to you command line and run following command to test if you have successfully installed it<div class="divkali"><span class="comment">npm</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">version</span></div>
+                        </li>
+                    </ul>
+                </section>
+                <section class="future" style="top: -244px; display: none;" hidden="">
+                    <h3>INSTALLING : PHONEGAP CLI</h3>
+                    <ul>
+                        <li>
+                            Run following command in your command line<div class="divkali"><span class="built_in">sudo</span> npm install -g phonegap</div>
+                        </li>
+                        <li>This will install 'phonegap' command that we we use predominantly to create phonegap based apps</li>
+                        <li>
+                            Once again, use following command to verify that installation has been successful<div class="divkali"><span class="comment">phonegap</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">version</span></div>
+                        </li>
+                    </ul>
+                </section><section class="future" style="top: -191px; display: none;" hidden="">
+                    <h3>INSTALLATION : IOS SPECIFIC</h3>
+                    <ul>
+                        <li>On your Mac, Install XCode &amp; Command Line Tools for XCode. Linux and Windows users can ignore this step</li>
+                        <li>
+                            Install 'ios-sim' command. This command is used to launch iOS simulator from command line.<div class="divkali">npm install <span class="attribute">-g</span> ios<span class="attribute">-sim</span></div>
+                        </li>
+                    </ul>
+                </section><section class="future" style="top: -223px; display: none;" hidden="">
+                    <h3>INSTALLATION : ANDROID SPECIFIC</h3>
+                    <ul>
+                        <li>Download latest Android Studio</li>
+                        <li>Applicable for Mac, Linux and Windows.</li>
+                        <li>Install it at your preferred location on your machine</li>
+                        <li>
+                            Update 'PATH'  to include '<path_to_android_sdk>
+                                /sdk/tools/'.
+                                This will allow 'android' command to be available to your shell
+                            </path_to_android_sdk>
+                        </li>
+                        <li>
+                            Update 'PATH'  to include
+                            '<path_to_android_sdk>
+                                /sdk/platform-tools/'. This will allow
+                                'adb' command to be available to your shell
+                            </path_to_android_sdk>
+                        </li>
+                    </ul>
+                </section><section class="future" style="top: -20px; display: none;" hidden="">
+                    <h3>Detail documentation</h3>
+                    <ul>
+                        <li><a href="https://gist.github.com/samyakbhuta/ec08c03fea7f6ceb36bd">Installing for Phonegap for Mac</a></li>
+                    </ul>
+                </section><section class="future" style="top: -20px; display: none;" hidden="">
+                    <h3>INSTALLATION : OTHER PLATFORMS</h3>
+                    <ul>
+                        <li>You need to download respective SDK first</li>
+                        <li>Check Platform Guides for more details and troubleshooting</li>
+                    </ul>
+                </section><section class="future" style="top: -20px; display: none;" hidden="">
+                    <h3>INSTALLATION : HANDY UTILITIES</h3>
+                    <ul>
+                        <li>
+                            Install 'http-server' command line utility which we shall be using to test our app in desktop browser<div class="divkali">npm install <span class="attribute">-g</span> http<span class="attribute">-server</span></div>
+                        </li>
+                    </ul>
+                </section>
+            </section><section class="stack past" style="top: 0px; display: none;" data-previous-indexv="0" hidden="">
+                <section style="top: -127.5px; display: none;" class="">
+                    <h3>A SIMPLE HELLO WORLD APP</h3>
+                    <ul>
+                        <li>Run following command to create your first PhoneGap app</li>
+                    </ul>
+                    <div class="divkali"><span class="title">phonegap</span> create phonegap-helloworld</div>
+                </section><section class="future" style="top: -139px; display: none;" hidden="">
+                    <h3>SEE THE SOURCE</h3>
+                    <p>Go to the folder you just created</p>
+                    <div class="divkali">
+                        <span class="title">cd</span> phonegap-helloworld<br />
+                        <span class="title">ls</span><br />
+                    </div>
+                </section>
+            </section><section class="stack past" style="top: 0px; display: none;" data-previous-indexv="0" hidden="">
+                <section style="top: -75px; display: none;" class="">
+                    <h3>The Phonegap Project Anatomy</h3>
+                </section><section class="future" style="top: -223px; display: none;" hidden="">
+                    <h3>Some curious developer questions</h3>
+                    <ul>
+                        <li>What exactly get created after each command execution ?</li>
+                        <li>What's the significance of each folder and files inside 'em ?</li>
+                        <li>How do I find ..</li>
+                        <li>Where do the iOS specific code sits, for example ?</li>
+                        <li>How do I make sure only minimum target API for my Android app is 15 ?</li>
+                        <li>Where the build is carried out ?</li>
+                    </ul>
+                </section><section class="future" style="top: -213.5px; display: none;" hidden="">
+                    <h3>Let's see the PhoneGap project root</h3>
+                    <div class="divkali">
+                        $ ls <span class="attribute">-al</span><br />
+                        total <span class="number">16</span><br />
+                        drwxr<span class="attribute">-xr</span><span class="attribute">-x</span>   <span class="number">9</span> samyak  staff   <span class="number">306</span> Jan <span class="number">18</span> <span class="number">04</span>:<span class="number">06</span> .<br />
+                        drwxr<span class="attribute">-xr</span><span class="attribute">-x</span>  <span class="number">11</span> samyak  staff   <span class="number">374</span> Jan <span class="number">18</span> <span class="number">04</span>:<span class="number">07</span> ..<br />
+                        drwxr<span class="attribute">-xr</span><span class="attribute">-x</span>   <span class="number">3</span> samyak  staff   <span class="number">102</span> Jan <span class="number">14</span> <span class="number">14</span>:<span class="number">00</span> .cordova<br />
+                        drwxr<span class="attribute">-xr</span><span class="attribute">-x</span>  <span class="number">12</span> samyak  staff   <span class="number">408</span> Jan <span class="number">17</span> <span class="number">19</span>:<span class="number">54</span> .git<br />
+                        <span class="attribute">-rw</span><span class="attribute">-r</span>-<span class="attribute">-r</span>--   <span class="number">1</span> samyak  staff  <span class="number">4933</span> Jan <span class="number">17</span> <span class="number">20</span>:<span class="number">13</span> config.xml<br />
+                        drwxr<span class="attribute">-xr</span><span class="attribute">-x</span>   <span class="number">3</span> samyak  staff   <span class="number">102</span> Jan <span class="number">14</span> <span class="number">14</span>:<span class="number">00</span> hooks<br />
+                        drwxr<span class="attribute">-xr</span><span class="attribute">-x</span>   <span class="number">4</span> samyak  staff   <span class="number">136</span> Jan <span class="number">14</span> <span class="number">14</span>:<span class="number">00</span> platforms<br />
+                        drwxr<span class="attribute">-xr</span><span class="attribute">-x</span>   <span class="number">4</span> samyak  staff   <span class="number">136</span> Jan <span class="number">14</span> <span class="number">14</span>:<span class="number">00</span> plugins<br />
+                        drwxr<span class="attribute">-xr</span><span class="attribute">-x</span>  <span class="number">10</span> samyak  staff   <span class="number">340</span> Jan <span class="number">14</span> <span class="number">14</span>:<span class="number">00</span> www<br />
+                    </div>
+                </section><section class="future" style="top: -272px; display: none;" hidden="">
+                    <h3><code>.cordova</code> folder</h3>
+                    <ul>
+                        <li>A typical convention followed to store configuration related to a command. In this case the command is <code>cordova</code></li>
+                        <li>The <code>.cordova</code> folder holds the configuration at project level. Hence, it is in project root.</li>
+                        <li>You can also have the <code>$HOME/.cordova/</code>.</li>
+                        <li>Here, the folder will have configuration settings meant to be applied at user level ( and not at project level)</li>
+                        <li>Will contain a file called <code>config.json</code></li>
+                        <li>You can add <code>hooks</code> folder here, too, but it is deprecated.</li>
+                    </ul>
+                </section><section class="future" style="top: -20px; display: none;" hidden="">
+                    <h3><code>config.json</code></h3>
+                    <ul>
+                        <li>Project specific configuration for <code>cordova</code> command.</li>
+                        <li>Sets project name and other settings</li>
+                    </ul>
+                </section><section class="future" style="top: -20px; display: none;" hidden="">
+                    <h3><code>.git</code> folder</h3>
+                    <ul>
+                        <li>A typical git folder to hold the versioning</li>
+                    </ul>
+                </section><section class="future" style="top: -20px; display: none;" hidden="">
+                    <h3><code>config.xml</code></h3>
+                    <ul>
+                        <li>Holds the application configurations</li>
+                        <li>Arguably the most important file in the structure</li>
+                        <li>Holds the name of the application</li>
+                        <li>Holds the description of the application</li>
+                        <li>Holds the icons and splashscreen information</li>
+                        <li>Author's name and email</li>
+                        <li>Various application preferences, e.g. device orientation</li>
+                        <li>Lists plugins</li>
+                    </ul>
+                </section><section class="future" style="top: -20px; display: none;" hidden="">
+                    <h3><code>hooks</code> folder</h3>
+                    <ul>
+                        <li>Contains special scripts that are executed on occurance of specific event</li>
+                        <li>That way, a script is 'hooked' to an event.</li>
+                        <li>Events like <code>after_build</code>, <code>after_compile</code>, <code>before_run</code> etc</li>
+                    </ul>
+                </section><section class="future" style="top: -20px; display: none;" hidden="">
+                    <h3><code>platforms</code> folder</h3>
+                    <ul>
+                        <li>Contains Platform specific project</li>
+                        <li>A new subfolder for each platform is created</li>
+                    </ul>
+                </section><section class="future" style="top: -20px; display: none;" hidden="">
+                    <h3><code>plugins</code> folder</h3>
+                    <ul>
+                        <li>Stores the plugins</li>
+                    </ul>
+                </section><section class="future" style="top: -20px; display: none;" hidden="">
+                    <h3><code>www</code> folder</h3>
+                    <div class="divkali">
+                        $ ls <span class="attribute">-al</span> www<br />
+                        <span class="attribute">-rw</span><span class="attribute">-r</span>-<span class="attribute">-r</span>--   <span class="number">1</span> samyak  staff   <span class="number">3646</span> Feb <span class="number">10</span> <span class="number">13</span>:<span class="number">23</span> config.xml<br />
+                        drwxr<span class="attribute">-xr</span><span class="attribute">-x</span>   <span class="number">3</span> samyak  staff    <span class="number">102</span> Feb <span class="number">10</span> <span class="number">13</span>:<span class="number">23</span> css<br />
+                        <span class="attribute">-rw</span><span class="attribute">-r</span>-<span class="attribute">-r</span>--   <span class="number">1</span> samyak  staff  <span class="number">11401</span> Feb <span class="number">10</span> <span class="number">13</span>:<span class="number">23</span> icon.png<br />
+                        drwxr<span class="attribute">-xr</span><span class="attribute">-x</span>   <span class="number">3</span> samyak  staff    <span class="number">102</span> Feb <span class="number">10</span> <span class="number">13</span>:<span class="number">23</span> img<br />
+                        <span class="attribute">-rw</span><span class="attribute">-r</span>-<span class="attribute">-r</span>--   <span class="number">1</span> samyak  staff   <span class="number">1943</span> Feb <span class="number">12</span> <span class="number">16</span>:<span class="number">09</span> index.html<br />
+                        drwxr<span class="attribute">-xr</span><span class="attribute">-x</span>   <span class="number">3</span> samyak  staff    <span class="number">102</span> Feb <span class="number">10</span> <span class="number">13</span>:<span class="number">23</span> js<br />
+                        drwxr<span class="attribute">-xr</span><span class="attribute">-x</span>   <span class="number">4</span> samyak  staff    <span class="number">136</span> Feb <span class="number">10</span> <span class="number">13</span>:<span class="number">23</span> res<br />
+                        drwxr<span class="attribute">-xr</span><span class="attribute">-x</span>   <span class="number">5</span> samyak  staff    <span class="number">170</span> Feb <span class="number">10</span> <span class="number">13</span>:<span class="number">23</span> spec<br />
+                        <span class="attribute">-rw</span><span class="attribute">-r</span>-<span class="attribute">-r</span>--   <span class="number">1</span> samyak  staff   <span class="number">2532</span> Feb <span class="number">10</span> <span class="number">13</span>:<span class="number">23</span> spec.html<br />
+                    </div>
+                </section><section class="future" style="top: -20px; display: none;" hidden="">
+                    <h3>INDEX.HTML</h3>
+                    <div class="divkali">
+                        &lt;<span class="keyword">div</span> <span class="class">
+                            <br />
+                            <span class="keyword">class</span>="<span class="title">app</span>"&gt;<br />
+                            &lt;<span class="title">h1</span>&gt;<span class="title">PhoneGap</span>&lt;/<span class="title">h1</span>&gt;<br />
+                            &lt;<span class="title">div</span> <span class="title">id</span>="<span class="title">deviceready</span>" <span class="title">class</span>="<span class="title">blink</span>"&gt;<br />
+                            &lt;<span class="title">p</span> <span class="title">class</span>="<span class="title">event</span> <span class="title">listening</span>"&gt;<span class="title">Connecting</span> <span class="title">to</span> <span class="title">Device</span>&lt;/<span class="title">p</span>&gt;<br />
+                            &lt;<span class="title">p</span> <span class="title">class</span>="<span class="title">event</span> <span class="title">received</span>"&gt;<span class="title">Device</span> <span class="title">is</span> <span class="title">Ready</span>&lt;/<span class="title">p</span>&gt;<br />
+                            &lt;/<span class="title">div</span>&gt;<br />
+                            &lt;/<span class="title">div</span>&gt;<br />
+                        </span>
+                    </div>
+                    <ul>
+                        <li>Replace 'PhoneGap' with 'Hello World'.</li>
+                        <li>Build, Run and Test (next set of slides explains how)</li>
+                    </ul>
+                </section><section class="future" style="top: -20px; display: none;" hidden="">
+                    <h3>.CORDOVA</h3>
+                    <p>It is another folder which is created in your project root</p>
+                    <div class="divkali">
+                        $ ls <span class="attribute">-al</span> .cordova<br />
+                        <span class="attribute">-rw</span><span class="attribute">-r</span>-<span class="attribute">-r</span>--   <span class="number">1</span> samyak  staff  <span class="number">209</span> Feb <span class="number">12</span> <span class="number">17</span>:<span class="number">08</span> config.json<br />
+                        drwxr<span class="attribute">-xr</span><span class="attribute">-x</span>  <span class="number">26</span> samyak  staff  <span class="number">884</span> Feb <span class="number">10</span> <span class="number">13</span>:<span class="number">23</span> hooks<br />
+                    </div>
+                </section>
+            </section><section class="stack past" style="top: 0px; display: none;" data-previous-indexv="0" hidden="">
+                <section style="top: -159.5px; display: none;" class="">
+                    <h3>BUILD, RUN AND TEST</h3>
+                    <ul>
+                        <li>Let us check our app against different targets</li>
+                        <li>Desktop Web Browser</li>
+                        <li>iOS Simulator</li>
+                        <li>Android Simulator</li>
+                    </ul>
+                </section><section class="future" style="top: -189.5px; display: none;" hidden="">
+                    <h3>RUNNING IN BROWSER</h3>
+                    <p>  *Go to the www directory and start http server</p>
+                    <div class="divkali">
+                        cd www
+                        http<span class="attribute">-server</span> <span class="attribute">-o</span>
+                    </div>
+                    <p>  <img src="http://localhost:8000/img/phonegap_intro.png" alt="alt text"></p>
+                </section><section class="future" style="top: -190.5px; display: none;" hidden="">
+                    <h3>RUNNING AS IOS APP</h3>
+                    <div class="divkali">
+                        $ phonegap run ios
+                        <span class="matrix">[phonegap]</span> detecting iOS SDK <span class="transposed_variable">environment...</span><br />
+                        <span class="matrix">[phonegap]</span> using the local environment<br />
+                        <span class="matrix">[phonegap]</span> compiling <span class="transposed_variable">iOS...</span><br />
+                        <span class="matrix">[phonegap]</span> successfully compiled iOS app<br />
+                        <span class="matrix">[phonegap]</span> trying to install app onto device<br />
+                        <span class="matrix">[phonegap]</span> no device was found<br />
+                        <span class="matrix">[phonegap]</span> trying to install app onto emulator<br />
+                        <span class="matrix">[phonegap]</span> successfully installed onto emulator<br />
+                    </div>
+                </section><section class="future" style="top: -125px; display: none;" hidden="">
+                    <h3>RUNNING AS IOS APP</h3>
+                    <p>  <img src="http://localhost:8000/img/iphone_image.png" alt="alt text"></p>
+                </section><section class="future" style="top: -20px; display: none;" hidden="">
+                    <h3>RUNNING AS ANDROID APP</h3>
+                    <div class="divkali">
+                        $ phonegap run android
+                        <span class="matrix">[phonegap]</span> detecting Android SDK <span class="transposed_variable">environment...</span><br />
+                        <span class="matrix">[phonegap]</span> using the local environment<br />
+                        <span class="matrix">[phonegap]</span> compiling <span class="transposed_variable">Android...</span><br />
+                        <span class="matrix">[phonegap]</span> successfully compiled Android app<br />
+                        <span class="matrix">[phonegap]</span> trying to install app onto device<br />
+                        <span class="matrix">[phonegap]</span> no device was found<br />
+                        <span class="matrix">[phonegap]</span> trying to install app onto emulator<br />
+                    </div>
+                </section><section class="future" style="top: -20px; display: none;" hidden="">
+                    <h3>RUNNING AS ANDROID APP</h3>
+                    <p>  <img src="http://localhost:8000/img/android_simulator.png" alt="alt text"></p>
+                </section><section class="future" style="top: -20px; display: none;" hidden="">
+                    <h3>TESTING</h3>
+                    <ul>
+                        <li>
+                            <p>Run the test using following command. This is predefined basic test illustrative of how you can setup testing.</p>
+                            <div class="divkali"><span class="label">http:</span>//localhost:<span class="number">8080</span>/spec<span class="preprocessor">.html</span></div>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://localhost:8000/img/testscreen1.png" alt="alt text"></p>
+                        </li>
+                    </ul>
+                </section>
+            </section><section class="stack past" style="top: 0px; display: none;" data-previous-indexv="0" hidden="">
+                <section style="top: -223px; display: none;" class="">
+                    <h3>BUILDS ON CLOUD</h3>
+                    <ul>
+                        <li>Sign up here at <a href="https://build.phonegap.com/">https://build.phonegap.com/</a></li>
+                        <li>Service by Adobe</li>
+                        <li>No need to setup anything locally</li>
+                        <li>You can create â open source apps</li>
+                        <li>Free plan includes one private app</li>
+                        <li>Current version supports iOS, Android, Win</li>
+                        <li>Support for Blackberry, Symbian, and WebOS dropped</li>
+                    </ul>
+                </section><section class="future" style="top: -276.5px; display: none;" hidden="">
+                    <h3>CREATING APPS WITH BUILD SERVICE</h3>
+                    <p>  Follow the steps below.</p>
+                    <div class="divkali">  phonegap create phonegap<span class="attribute">-buildservice</span><span class="attribute">-helloworld</span></div><br />
+                    <div class="divkali">  cd phonegap<span class="attribute">-buildservice</span><span class="attribute">-helloworld</span></div><br />
+                    <div class="divkali">  <span class="title">git</span> init</div><br />
+                    <div class="divkali">  git <span class="keyword">add</span> .</div><br />
+                    <div class="divkali">  <span class="comment">git</span> <span class="comment">commit</span> <span class="literal">-</span><span class="comment">m</span> <span class="comment">'Init</span> <span class="comment">commit'</span></div><br />
+                    <p>  Create a repository on Github. Set the remote.</p>
+                    <div class="divkali">  git <span class="keyword">push</span> origin master</div><br />
+                </section><section class="future" style="top: -286.5px; display: none;" hidden="">
+                    <h3>CREATING APPS WITH BUILD SERVICE</h3>
+                    <ul>
+                        <li>Link your github account to your build service account</li>
+                        <li>Go to <a href="https://build.phonegap.com/apps">https://build.phonegap.com/apps</a></li>
+                        <li>Click on  '+ new app'</li>
+                        <li>Provide the reference to git repo you created or upload a zip file of the project folder</li>
+                        <li>It will fetch the code and provide you with further options</li>
+                        <li>Click on 'Ready to Build'</li>
+                        <li>You will see app getting build for various platforms</li>
+                        <li>Download the app bundle and test it. You can also scan the barcode to download the app.</li>
+                    </ul>
+                </section><section class="future" style="top: -244.5px; display: none;" hidden="">
+                    <h3>MAKE SOME CHANGES</h3>
+                    <ul>
+                        <li>Open index.html and edit the content</li>
+                        <li>Create another commit with this change</li>
+                        <li>Push the commit to the Github repo</li>
+                        <li>Go to Build Service Portal</li>
+                        <li>Select your app by clicking its title or icon.</li>
+                        <li>Pull the latest code from your Github repo. You need to do it under the 'Settings' section of your app.</li>
+                        <li>Rebuild. Download. Test.</li>
+                    </ul>
+                </section><section class="future" style="top: -20px; display: none;" hidden="">
+                    <h3>MORE</h3>
+                    <ul>
+                        <li>Documentaion - <a href="http://docs.build.phonegap.com">http://docs.build.phonegap.com</a></li>
+                        <li>Explore Hydration and Remote Debugging</li>
+                    </ul>
+                </section>
+            </section><section class="stack past" style="top: 0px; display: none;" data-previous-indexv="0" hidden="">
+                <section style="top: -275px; display: none;" class="">
+                    <h3>USING A PLUGIN</h3>
+                    <ul>
+                        <li>Create a small app which provides us geolocation data</li>
+                        <li>
+                            <p>Create an application using the CLI</p>
+                            <div class="divkali">phonegap create geolocate <span class="keyword">com</span><span class="preprocessor">.mycompany</span><span class="preprocessor">.geolocate</span> GeoLocate</div>
+                        </li>
+                        <li>
+                            <p>Add plugin to the project</p>
+                            <div class="divkali">cordova plugin <span class="keyword">add</span> org<span class="preprocessor">.apache</span><span class="preprocessor">.cordova</span><span class="preprocessor">.geolocation</span></div>
+                        </li>
+                        <li>
+                            <p>You can search available plugins using following command, or have a look at  <a href="https://build.phonegap.com/plugins">https://build.phonegap.com/plugins</a></p>
+                            <div class="divkali"><span class="title">cordova</span> plugin search geo</div>
+                        </li>
+                    </ul>
+                </section><section class="future" style="top: -223px; display: none;" hidden="">
+                    <h3>USING A PLUGIN</h3>
+                    <ul>
+                        <li>One need to go to the relevant plugin documentation to know how the plugin need to be used in your code. For geolocation plugin that would be <a href="http://docs.phonegap.com/en/3.3.0/cordova_geolocation_geolocation.md.html#Geolocation">here</a>.</li>
+                        <li>Make changes in your code so that you can display geolocation data made available using the plugin. See the relevant changes in this <a href="https://github.com/samyakbhuta/geolocate/commit/af382c3f977c285666738c53ca49ef527d364d54">commit</a></li>
+                        <li>Build, Run and Test.</li>
+                    </ul>
+                </section>
+            </section><section class="past" style="top: -181px; display: none;" hidden="">
+                <h3>USEFUL LINKS</h3>
+                <ul>
+                    <li>Documentation - <a href="http://docs.phonegap.com">http://docs.phonegap.com</a></li>
+                    <li>Tooling - <a href="http://phonegap.com/tool">http://phonegap.com/tool</a> (Lots of 'em)</li>
+                    <li>Featured Apps - <a href="http://phonegap.com/app/feature">http://phonegap.com/app/feature</a></li>
+                    <li>All Apps - <a href="http://phonegap.com/app">http://phonegap.com/app</a></li>
+                    <li>Books - <a href="http://phonegap.com/book">http://phonegap.com/book</a></li>
+                </ul>
+            </section><section class="stack past" style="top: 0px; display: block;" data-previous-indexv="0" hidden="">
+                <section style="top: -290px; display: block;" class="">
+                    <h3>ECOLOGY</h3>
+                    <p>  Community/Product/Services based on PhoneGap/Cordova</p>
+                    <ul>
+                        <li><a href="http://www.worklight.com">http://www.worklight.com</a> by IBM (blogpost)</li>
+                        <li><a href="http://www.convertigo.com">http://www.convertigo.com</a> (blogpost)</li>
+                        <li><a href="http://apppresser.com">http://apppresser.com</a> - WordPress + Phonegap</li>
+                        <li><a href="http://people.phonegap.com">http://people.phonegap.com</a> - 3600+ Registered Devs</li>
+                        <li><a href="http://phonegap.com/community">http://phonegap.com/community</a></li>
+                        <li>IRC : irc.freenode.net, #phonegap</li>
+                        <li>
+                            <p>List : <a href="http://groups.google.com/group/phonegap">http://groups.google.com/group/phonegap</a></p>
+                            <p>These are selective examples only</p>
+                        </li>
+                    </ul>
+                </section><section class="future" style="top: -198.5px; display: none;" hidden="">
+                    <h3>QUOTES</h3>
+                    <blockquote>
+                        <p>The Rormix app was made using PhoneGap and released on iOS and Android. Development took just over a month from the first line of code, to the app submissions in the app stores.</p>
+                    </blockquote>
+                    <p>  -&nbsp;From a <a href="http://phonegap.com/blog/2013/11/28/discover-emerging-music-videos/">blogpost</a></p>
+                </section>
+            </section><section class="past" style="top: -135px; display: block;" hidden="">
+                <h3>SOURCES</h3>
+                <ul>
+                    <li><a href="http://phonegap.com">http://phonegap.com</a></li>
+                    <li><a href="http://cordova.apache.org">http://cordova.apache.org</a></li>
+                    <li><a href="http://en.wikipedia.org/wiki/PhoneGap">http://en.wikipedia.org/wiki/PhoneGap</a></li>
+                </ul>
+            </section><section class="stack past" style="top: 0px; display: block;" data-previous-indexv="0" hidden="">
+                <section style="top: -195px; display: block;" class="">
+                    <h3>Understanding Hooks</h3>
+                    <ul>
+                        <li>Dedicated scripts that are invoked on a particular event</li>
+                        <li>These scripts can be added by application developer and/or plugin developer</li>
+                        <li>Plenty of events, allowing finer control at every step of development workflow</li>
+                        <li>Three different way exists to introduce hooks to your project</li>
+                    </ul>
+                </section><section class="future" style="top: -335px; display: block;" hidden="">
+                    <h3>Hook types - behold !</h3>
+                    <ul>
+                        <li>
+                            The long list of hook types (events)<div class="divkali">
+                                <span class="title">after_build</span><br />
+                                <span class="title">after_compile</span><br />
+                                <span class="title">after_docs</span><br />
+                                <span class="title">after_emulate</span><br />
+                                <span class="title">after_platform_add</span><br />
+                                <span class="title">after_platform_rm</span><br />
+                                <span class="title">after_platform_ls</span><br />
+                                <span class="title">after_plugin_add</span><br />
+                                <span class="title">after_plugin_ls</span><br />
+                                <span class="title">after_plugin_rm</span><br />
+                                <span class="title">after_plugin_search</span><br />
+                                <span class="title">after_plugin_install</span><br />
+                                <span class="title">after_prepare</span><br />
+                                <span class="title">after_run</span><br />
+                                <span class="title">after_serve</span><br />
+                                <span class="title">before_build</span><br />
+                                <span class="title">before_compile</span><br />
+                                <span class="title">before_docs</span><br />
+                                <span class="title">before_emulate</span><br />
+                                <span class="title">before_platform_add</span><br />
+                                <span class="title">before_platform_rm</span><br />
+                                <span class="title">before_platform_ls</span><br />
+                                <span class="title">before_plugin_add</span><br />
+                                <span class="title">before_plugin_ls</span><br />
+                                <span class="title">before_plugin_rm</span><br />
+                                <span class="title">before_plugin_search</span><br />
+                                <span class="title">before_plugin_install</span><br />
+                                <span class="title">before_plugin_uninstall</span><br />
+                                <span class="title">before_prepare</span><br />
+                                <span class="title">before_run</span><br />
+                                <span class="title">before_serve</span><br />
+                                <span class="title">pre_package</span><br />
+                            </div>
+                        </li>
+                    </ul>
+                </section><section class="future" style="top: -195px; display: block;" hidden="">
+                    <h3>Adding hooks</h3>
+                    <ul>
+                        <li>The three ways</li>
+                        <li>using <code>hooks</code> folder</li>
+                        <li>using <code>config.xml</code> file</li>
+                        <li>using <code>plugin.xml</code> file</li>
+                    </ul>
+                </section>
+            </section><section class="present" style="top: -110px; display: block;">
+                <h1>Thank you</h1>
+            </section>
+        </div>
+
+        <div class="backgrounds"><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"><div class="slide-background present"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"><div class="slide-background present"></div><div class="slide-background future"></div></div><div class="slide-background past"><div class="slide-background present"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div></div><div class="slide-background past"><div class="slide-background present"></div><div class="slide-background future"></div></div><div class="slide-background past"><div class="slide-background present"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div></div><div class="slide-background past"><div class="slide-background present"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div></div><div class="slide-background past"><div class="slide-background present"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div></div><div class="slide-background past"><div class="slide-background present"></div><div class="slide-background future"></div></div><div class="slide-background past"></div><div class="slide-background past"><div class="slide-background present"></div><div class="slide-background future"></div></div><div class="slide-background past"></div><div class="slide-background past"><div class="slide-background present"></div><div class="slide-background future"></div><div class="slide-background future"></div></div><div class="slide-background present"></div></div><div class="progress" style="display: block;"><span style="width: 225px;"></span></div><aside class="controls" style="display: block;"><div class="navigate-left enabled"></div><div class="navigate-right"></div><div class="navigate-up"></div><div class="navigate-down"></div></aside><div class="slide-number"></div><div class="state-background"></div><div class="pause-overlay"></div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <!--<script src="js/reveal.js"></script>-->
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+            // Parallax scrolling
+            // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+            // parallaxBackgroundSize: '2100px 900px',
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+              { src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+               { src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+               { src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+               { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+               { src: 'plugin/zoom-js/zoom.js', async: true, condition: function () { return !!document.body.classList; } },
+               { src: 'plugin/notes/notes.js', async: true, condition: function () { return !!document.body.classList; } }
+            ]
+        });
+
+    </script>
+    <script type="text/javascript" src="plugin/markdown/marked.js"></script>
+    <script type="text/javascript" src="plugin/markdown/markdown.js"></script>
+    <script type="text/javascript" src="plugin/highlight/highlight.js"></script>
+    <script type="text/javascript" src="plugin/zoom-js/zoom.js"></script>
+    <script type="text/javascript" src="plugin/notes/notes.js"></script>
+</body>
+</html>

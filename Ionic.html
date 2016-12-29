@@ -1,0 +1,382 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>reveal.js - The HTML Presentation Framework</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../lib/css/Newzenburn.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+        if (window.location.search.match(/print-pdf/gi)) {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = 'css/print/pdf.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+    </script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://app.userapp.io/js/userapp.client.js"></script>
+
+    <script language="JavaScript">
+    //////////F12 disable code////////////////////////
+    document.onkeypress = function (event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+            //alert('No F-12');
+            return false;
+        }
+    }
+    document.onmousedown = function (event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+            //alert('No F-keys');
+            return false;
+        }
+    }
+    document.onkeydown = function (event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+            //alert('No F-keys');
+            return false;
+        }
+    }
+    /////////////////////end///////////////////////
+
+
+    //Disable right click script
+    //visit http://www.rainbow.arch.scriptmania.com/scripts/
+    var message = "Sorry, right-click has been disabled";
+    ///////////////////////////////////
+    function clickIE() { if (document.all) { (message); return false; } }
+    function clickNS(e) {
+        if
+(document.layers || (document.getElementById && !document.all)) {
+            if (e.which == 2 || e.which == 3) { (message); return false; }
+        }
+    }
+    if (document.layers)
+    { document.captureEvents(Event.MOUSEDOWN); document.onmousedown = clickNS; }
+    else { document.onmouseup = clickNS; document.oncontextmenu = clickIE; }
+    document.oncontextmenu = new Function("return false")
+    //
+    function disableCtrlKeyCombination(e) {
+        //list all CTRL + key combinations you want to disable
+        var forbiddenKeys = new Array('a', 'n', 'c', 'x', 'v', 'j', 'w', 's');
+        var key;
+        var isCtrl;
+        if (window.event) {
+            key = window.event.keyCode;     //IE
+            if (window.event.ctrlKey)
+                isCtrl = true;
+            else
+                isCtrl = false;
+        }
+        else {
+            key = e.which;     //firefox
+            if (e.ctrlKey)
+                isCtrl = true;
+            else
+                isCtrl = false;
+        }
+        //if ctrl is pressed check if other key is in forbidenKeys array
+        if (isCtrl) {
+            for (i = 0; i < forbiddenKeys.length; i++) {
+                //case-insensitive comparation
+                if (forbiddenKeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase()) {
+                    alert('Key combination CTRL + ' + String.fromCharCode(key) + ' has been disabled.');
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    </script>
+
+
+
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .divkali {
+            display: block;
+            padding: 0.5em;
+            background: #3F3F3F;
+            color: #DCDCDC;
+            overflow: auto;
+            max-height: 400px;
+            word-wrap: normal;
+            text-align: left;
+            font-size: .55em !important;
+            font-family: monospace !important;
+            line-height: 1.2em !important;
+        }
+
+        .literal {
+            color: #EFEFAF;
+        }
+
+        .built_in {
+            color: #CC9393;
+        }
+
+        .comment {
+            color: #7F9F7F;
+        }
+
+        .title {
+            color: #efef8f;
+        }
+
+        .number {
+            color: #8CD0D3;
+        }
+
+        .keyword {
+            color: #E3CEAB;
+        }
+    </style>
+</head>
+
+<body style="transition: -webkit-transform 0.8s ease; -webkit-transition: -webkit-transform 0.8s ease;" onkeypress="return disableCtrlKeyCombination(event);" onkeydown="return disableCtrlKeyCombination(event);">
+
+    <div class="reveal" data-transition-speed="default" data-background-transition="default">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section class="present">
+                <h1>Ionic</h1>
+                <p class="fragment" style="text-align: right;" data-fragment-index="0">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    kaliprasada rao banala <!-- -->
+                </p>
+                <p class="fragment" style="text-align: right;" data-fragment-index="1">
+                    email : <!-- -->
+                    <a href="mailto:prasadrao.banala@gmail.com" class="fragment" data-fragment-index="1">prasadrao dot banal at gmail.com</a> <!-- -->
+                </p>
+                <p class="fragment" style="text-align: right;" data-fragment-index="2">
+                    twitter : <!-- -->
+                    <a href="https://twitter.com/prasadrao08" class="fragment" data-fragment-index="2">@prasadrao08</a> <!-- -->
+                </p>
+                <p class="fragment" style="text-align: right;" data-fragment-index="3">
+                    github : <!-- -->
+                    <a href="https://github.com/prasad4u" class="fragment" data-fragment-index="3">prasad4ru</a> <!-- -->
+                </p>
+
+            </section>
+            <section class="future" style="top: -95px; display: block;">
+                <h3>Official Site</h3>
+                <ul>
+                    <li><a href="http://ionicframework.com"></a><a href="http://ionicframework.com">http://ionicframework.com</a></li>
+                </ul>
+            </section>
+            <section class="stack future" style="top: 0px; display: block;" data-previous-indexv="0">
+                <section style="top: -127.5px; display: block;">
+                    <h3>Ionic is what ?</h3>
+                    <blockquote>
+                        <p>The beautiful, open source front-end SDK for developing hybrid mobile apps with HTML5.</p>
+                    </blockquote>
+                </section><section class="future" style="top: -175px; display: block;">
+                    <h3>Ionic is what ?</h3>
+                    <ul>
+                        <li>An opinionated mobile application development framework on top of Cordova</li>
+                        <li>This means it is going to be a hybrid mobile application</li>
+                        <li>The other opinionated part is it's selection of Angular.js</li>
+                        <li>It's own CSS framework (which is not Bootstrap or ZURB's Foundation)</li>
+                    </ul>
+                </section>
+            </section>
+            <section class="stack future" style="top: 0px; display: block" data-previous-indexv="0">
+                <section style="top: -135px; display: block;">
+                    <h3>Installing Ionic</h3>
+                    <ul>
+                        <li>You need to have node.js installed as a prerequisite</li>
+                        <li>Get yourself node.js from <a href="http://nodejs.org/download/"></a><a href="http://nodejs.org/download/">http://nodejs.org/download/</a></li>
+                    </ul>
+                </section>
+                <section class="present" style="top: -98px;">
+                    <h3>Install Cordova</h3>
+                    <div class="divkali"><span class="comment">npm</span> <span class="comment">install</span> <span class="literal">-</span><span class="comment">g</span> <span class="comment">cordova</span></div>
+                </section>
+                <section class="future" style="top: -20px; display: none;">
+                    <h3>Install Ionic</h3>
+                    <div class="divkali"><span class="comment">npm</span> <span class="comment">install</span> <span class="literal">-</span><span class="comment">g</span> <span class="comment">ionic</span></div>
+                </section>
+            </section>
+            <section class="stack future" style="top: 0px; display: block;" data-previous-indexv="0">
+                <section style="top: -145px; display: block;">
+                    <h3>Creating a Hello World Application</h3>
+                    <div class="divkali"><span class="title">ionic</span> start hello-world</div>
+                    <ul>
+                        <li>It will create an ionic application with necessary boilerplat'ing</li>
+                    </ul>
+                </section><section class="future" style="top: -145px; display: block;">
+                    <h3>Dig in to the application folder</h3>
+                    <div class="divkali"><span class="built_in">cd</span> hello-world</div>
+                    <ul>
+                        <li>You may want to look around and explore the folders here.</li>
+                        <li>It is a essentially a <code>Cordova</code> project.</li>
+                    </ul>
+                </section><section class="future" style="top: -145px; display: block;">
+                    <h3>Setup few more things - saas</h3>
+                    <div class="divkali"><span class="title">ionic</span> setup sass</div>
+                    <ul>
+                        <li><code>Sass</code> is a CSS on steroids. Learn more <a href="http://sass-lang.com">here</a></li>
+                        <li>This step is optional, you may want to have your project not use <code>Saas</code>.</li>
+                    </ul>
+                </section><section class="future" style="top: -150px; display: block;">
+                    <h3>Check it in browser</h3>
+                    <div class="divkali"><span class="title">ionic</span> serve</div>
+                    <p>This should start a server and automatically open the app in your default browser</p>
+                </section><section class="future" style="top: -20px; display: none;">
+                    <h3>Try it on Mobile Browsers</h3>
+                    <ul>
+                        <li>At this moment it would be good idea to try this served application in your mobile browsers, too.</li>
+                        <li>It would help you understand how the application will look and feel</li>
+                        <li>You might be able to also gauge if the performance and responsiveness is acceptable or not</li>
+                    </ul>
+                </section><section class="future" style="top: -20px; display: none;">
+                    <h3>Time to see it as an Application</h3>
+                    <ul>
+                        <li>First, you need to add respective platform</li>
+                        <li>Build for that platform</li>
+                        <li>See it on emulator</li>
+                        <li>Run it on real device</li>
+                    </ul>
+                </section><section class="future" style="top: -20px; display: none;">
+                    <h3>Adding platform</h3>
+                    <div class="divkali">ionic platform <span class="keyword">add</span> ios</div>
+                    <ul>
+                        <li>Will add <code>iOS</code> as target platform</li>
+                        <li>You need to run this command only once to allow <code>ionic</code> to prepare for the target platform</li>
+                    </ul>
+                </section><section class="future" style="top: -20px; display: none;">
+                    <h3>Building for the platform</h3>
+                    <div class="divkali"><span class="title">ionic</span> build ios</div>
+                    <ul>
+                        <li>Will compile and build for the platform</li>
+                        <li>Need to repeat this every time you change something in code or configuration</li>
+                    </ul>
+                </section><section class="future" style="top: -20px; display: none;">
+                    <h3>Go for a (virtual!) ride</h3>
+                    <div class="divkali"><span class="title">ionic</span> emulate ios</div>
+                    <ul>
+                        <li>Will start the respective emulator and allow you to test the application</li>
+                        <li>Needless to say, you need to execute this command everytime you want to see application in action</li>
+                    </ul>
+                </section><section class="future" style="top: -20px; display: none;">
+                    <h3>Run it in your devices</h3>
+                    <div class="divkali">ionic <span class="command">run</span> ios</div>
+                    <ul>
+                        <li>Launch the application in the connected device</li>
+                        <li>If the device is not recognised, it will launch it in emulator</li>
+                    </ul>
+                </section>
+                <section class="future" style="top: -20px; display: none;">
+                    <h3>More init powers - Please try</h3>
+                    <div class="divkali"><span class="title">ionic</span> start hello-world-<span class="number">2</span> blank</div><br />
+                    <div class="divkali"><span class="title">ionic</span> start hello-world-<span class="number">3</span> tabs</div><br />
+                    <div class="divkali"><span class="title">ionic</span> start hello-world-<span class="attribute">with</span><span class="attribute">-sidemenu</span> sidemenu</div><br />
+                    <ul>
+                        <li>It will not only create the application but populate it with some generated code</li>
+                        <li>Basically, it is boilerplat'ing to next level</li>
+                    </ul>
+                </section>
+            </section>
+            <section class="stack future" style="top: 0px; display: block;" data-previous-indexv="0">
+                <section style="top: -135px; display: block;">
+                    <h3>Using Ionic Creator</h3>
+                    <ul>
+                        <li>Please go to <a href="https://creator.ionic.io/"></a><a href="https://creator.ionic.io/">https://creator.ionic.io/</a></li>
+                        <li>Sign up !</li>
+                    </ul>
+                </section><section class="future" style="top: -167.5px; display: block;">
+                    <h3>What is Ionic Creator ?</h3>
+                    <blockquote>
+                        <p>Creator makes it easy to rapidly build Ionic mobile apps. With a drag-and-drop interface and real code exporting, you can create live apps for your team with a few drags of the mouse. And it's totally free to use.</p>
+                    </blockquote>
+                </section><section class="future" style="top: -115px; display: block;">
+                    <h3>Mind you - It is in Beta !</h3>
+                    <ul>
+                        <li>But it is already awesome</li>
+                    </ul>
+                </section><section class="future" style="top: -135px; display: none;">
+                    <h3>Create a small app</h3>
+                    <ul>
+                        <li>Try to create some small application using the controls provided by Creator</li>
+                        <li>Checkout export functionality, with which you can download the application and build it locally</li>
+                    </ul>
+                </section><section class="future" style="top: -20px; display: none;">
+                    <h3>Some Inspiration</h3>
+                    <ul>
+                        <li><a href="http://showcase.ionicframework.com"></a><a href="http://showcase.ionicframework.com">http://showcase.ionicframework.com</a></li>
+                    </ul>
+                </section>
+            </section>
+            <section class="future" style="top: -110px; display: block;">
+                <h1>Thank you</h1>
+            </section>
+        </div>
+
+        <div class="backgrounds"><div class="slide-background present"></div><div class="slide-background future"></div><div class="slide-background future"><div class="slide-background present"></div><div class="slide-background future"></div></div><div class="slide-background future"><div class="slide-background present"></div><div class="slide-background future"></div><div class="slide-background future"></div></div><div class="slide-background future"><div class="slide-background present"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div></div><div class="slide-background future"><div class="slide-background present"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div><div class="slide-background future"></div></div><div class="slide-background future"></div></div><div class="progress" style="display: block;"><span style="width: 0px;"></span></div><aside class="controls" style="display: block;"><div class="navigate-left"></div><div class="navigate-right enabled fragmented"></div><div class="navigate-up"></div><div class="navigate-down"></div></aside><div class="slide-number"></div><div class="state-background"></div><div class="pause-overlay"></div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <!--<script src="js/reveal.js"></script>-->
+    <script src="js/reveal.min.js"></script>
+    <script>
+
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+            // Parallax scrolling
+            // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+            // parallaxBackgroundSize: '2100px 900px',
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+              { src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+               { src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+               { src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+               { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+               { src: 'plugin/zoom-js/zoom.js', async: true, condition: function () { return !!document.body.classList; } },
+               { src: 'plugin/notes/notes.js', async: true, condition: function () { return !!document.body.classList; } }
+            ]
+        });
+
+    </script>
+    <script type="text/javascript" src="plugin/markdown/marked.js"></script>
+    <script type="text/javascript" src="plugin/markdown/markdown.js"></script>
+    <script type="text/javascript" src="plugin/highlight/highlight.js"></script>
+    <script type="text/javascript" src="plugin/zoom-js/zoom.js"></script>
+    <script type="text/javascript" src="plugin/notes/notes.js"></script>
+
+</body>
+</html>
